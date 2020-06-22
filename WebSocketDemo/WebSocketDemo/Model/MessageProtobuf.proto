@@ -1,0 +1,46 @@
+syntax = "proto3";
+option java_package = "com.bj58.jxedt.playground.websocket.message";
+option java_outer_classname = "WSMessage";
+
+message WSBaseMessage{
+   int32 msgType = 2;
+   bytes bytesData = 3;
+}
+
+//type = 1
+message WSLoginReq{
+   string deviceId = 1;
+}
+
+
+//type=2
+message WSLoginRes{
+   int32 code = 1;
+   string desc = 2;
+}
+
+//type=3
+message WSHeartbeatReq{
+   string deviceId = 1;
+}
+
+//type=4
+message WSHeartbeatRes{
+   int32 code = 1;
+   string desc = 2;
+}
+
+//type=5
+message WSTextMessageReq{
+   string messageId = 1;
+   string deviceId = 2;
+   string content = 3;
+}
+
+//type=6
+message WSTextMessageRes{
+   string messageId = 1;
+   int32 code = 2;
+   string desc = 3;
+   string content = 4;
+}

@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
         
-    [[SocketRocketUtility instance] SRWebSocketOpenWithURLString:@"ws://121.43.38.179:7397"];
+    [[SocketRocketUtility instance] SRWebSocketOpenWithURLString:@"ws://10.252.72.169:8889/ws"];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(SRWebSocketDidOpen) name:kWebSocketDidOpenNote object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(SRWebSocketDidReceiveMsg:) name:kWebSocketDidCloseNote object:nil];
 

@@ -1,12 +1,20 @@
 PODS:
+  - Protobuf (3.3.0)
   - SocketRocket (0.5.1)
 
 DEPENDENCIES:
+  - Protobuf (= 3.3.0)
   - SocketRocket
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Protobuf
+    - SocketRocket
+
 SPEC CHECKSUMS:
+  Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: db7b709a4ce242b5da7af3cdde892d7b0e76f60d
+PODFILE CHECKSUM: 0114bd7878037efde4ec602b15c2225f54994e2c
 
-COCOAPODS: 1.1.0
+COCOAPODS: 1.7.2

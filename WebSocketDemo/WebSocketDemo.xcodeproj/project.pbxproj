@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53BF4EB0249B41760081B95B /* MessageProtobuf.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BF4EAD249B41760081B95B /* MessageProtobuf.pbobjc.m */; };
+		53BF4EB1249B41760081B95B /* MessageProtobuf.proto in Sources */ = {isa = PBXBuildFile; fileRef = 53BF4EAE249B41760081B95B /* MessageProtobuf.proto */; };
 		7B5301731E557E7400074E6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5301721E557E7400074E6B /* main.m */; };
 		7B5301761E557E7400074E6B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5301751E557E7400074E6B /* AppDelegate.m */; };
 		7B5301791E557E7400074E6B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B5301781E557E7400074E6B /* ViewController.m */; };
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53BF4EAD249B41760081B95B /* MessageProtobuf.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageProtobuf.pbobjc.m; sourceTree = "<group>"; };
+		53BF4EAE249B41760081B95B /* MessageProtobuf.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = MessageProtobuf.proto; sourceTree = "<group>"; };
+		53BF4EAF249B41760081B95B /* MessageProtobuf.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageProtobuf.pbobjc.h; sourceTree = "<group>"; };
 		5C3359F40715DED21C357E44 /* libPods-WebSocketDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebSocketDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B53016E1E557E7400074E6B /* WebSocketDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebSocketDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5301721E557E7400074E6B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,6 +99,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		53BF4EAC249B41760081B95B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				53BF4EAF249B41760081B95B /* MessageProtobuf.pbobjc.h */,
+				53BF4EAD249B41760081B95B /* MessageProtobuf.pbobjc.m */,
+				53BF4EAE249B41760081B95B /* MessageProtobuf.proto */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7B5301651E557E7300074E6B = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +139,7 @@
 				7B5301751E557E7400074E6B /* AppDelegate.m */,
 				7B5301771E557E7400074E6B /* ViewController.h */,
 				7B5301781E557E7400074E6B /* ViewController.m */,
+				53BF4EAC249B41760081B95B /* Model */,
 				7B53017A1E557E7400074E6B /* Main.storyboard */,
 				7B53017D1E557E7400074E6B /* Assets.xcassets */,
 				7B53017F1E557E7400074E6B /* LaunchScreen.storyboard */,
@@ -188,8 +204,6 @@
 				7B53016A1E557E7400074E6B /* Sources */,
 				7B53016B1E557E7400074E6B /* Frameworks */,
 				7B53016C1E557E7400074E6B /* Resources */,
-				C8F0AF07A1E9A8072C822CAB /* [CP] Embed Pods Frameworks */,
-				6C2DEB9D5CF0DFE3EEDFD194 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -247,7 +261,7 @@
 				TargetAttributes = {
 					7B53016D1E557E7400074E6B = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 87A4WPHHG4;
+						DevelopmentTeam = HBE97FZKWB;
 						ProvisioningStyle = Automatic;
 					};
 					7B5301861E557E7400074E6B = {
@@ -267,6 +281,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -316,43 +331,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebSocketDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6C2DEB9D5CF0DFE3EEDFD194 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebSocketDemo/Pods-WebSocketDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C8F0AF07A1E9A8072C822CAB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebSocketDemo/Pods-WebSocketDemo-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -363,7 +351,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B5301791E557E7400074E6B /* ViewController.m in Sources */,
+				53BF4EB1249B41760081B95B /* MessageProtobuf.proto in Sources */,
 				7B9AC0951F3C2BEE00E0D690 /* SocketRocketUtility.m in Sources */,
+				53BF4EB0249B41760081B95B /* MessageProtobuf.pbobjc.m in Sources */,
 				7B5301761E557E7400074E6B /* AppDelegate.m in Sources */,
 				7B5301731E557E7400074E6B /* main.m in Sources */,
 			);
@@ -460,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -501,7 +491,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -513,8 +503,9 @@
 			baseConfigurationReference = F6F4A3807BB9701FBE8A0869 /* Pods-WebSocketDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 87A4WPHHG4;
+				DEVELOPMENT_TEAM = HBE97FZKWB;
 				INFOPLIST_FILE = WebSocketDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sun.WebSocketDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -526,8 +517,9 @@
 			baseConfigurationReference = D061913CD0F734A111F3198E /* Pods-WebSocketDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 87A4WPHHG4;
+				DEVELOPMENT_TEAM = HBE97FZKWB;
 				INFOPLIST_FILE = WebSocketDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sun.WebSocketDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <SocketRocket.h>
+#import "MessageProtobuf.pbobjc.h"
 
 extern NSString * const kNeedPayOrderNote;
 extern NSString * const kWebSocketDidOpenNote;

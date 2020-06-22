@@ -1,4 +1,5 @@
 platform :ios, ‘8.0’
 target “WebSocketDemo” do
 pod 'SocketRocket'
+pod 'Protobuf', '3.3.0'
 end

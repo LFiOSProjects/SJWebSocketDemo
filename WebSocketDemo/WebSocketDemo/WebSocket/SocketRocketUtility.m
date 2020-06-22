@@ -159,7 +159,7 @@ NSString * const kWebSocketdidReceiveMessageNote = @"kWebSocketdidReceiveMessage
     dispatch_main_async_safe(^{
         [self destoryHeartBeat];
         //心跳设置为3分钟，NAT超时一般为5分钟
-        heartBeat = [NSTimer timerWithTimeInterval:3 target:self selector:@selector(sentheart) userInfo:nil repeats:YES];
+        heartBeat = [NSTimer timerWithTimeInterval:30 target:self selector:@selector(sentheart) userInfo:nil repeats:YES];
         //和服务端约定好发送什么作为心跳标识，尽可能的减小心跳包大小
         [[NSRunLoop currentRunLoop] addTimer:heartBeat forMode:NSRunLoopCommonModes];
     })
@@ -167,7 +167,15 @@ NSString * const kWebSocketdidReceiveMessageNote = @"kWebSocketdidReceiveMessage
 
 - (void)sentheart {
     //发送心跳 和后台可以约定发送什么内容  一般可以调用ping  我这里根据后台的要求 发送了data给他
-    [self sendData:@"heart"];
+//    [self sendData:@"heart"];
+    
+    WSHeartbeatReq *heartReq = [[WSHeartbeatReq alloc]init];
+    heartReq.deviceId = @"123456";
+    WSBaseMessage *baseMessage = [[WSBaseMessage alloc]init];
+    baseMessage.msgType = 3;
+    baseMessage.bytesData = [heartReq data];
+    
+    [self sendData:[baseMessage data]];
 }
 
 //pingPong
@@ -222,7 +230,15 @@ NSString * const kWebSocketdidReceiveMessageNote = @"kWebSocketdidReceiveMessage
     
     if (webSocket == self.socket) {
         NSLog(@"************************** socket收到数据了************************** ");
-        NSLog(@"我这后台约定的 message 是 json 格式数据收到数据，就按格式解析吧，然后把数据发给调用层");
+        WSBaseMessage *baseMessageModel = [WSBaseMessage parseFromData:message error:nil];
+        NSInteger type = baseMessageModel.msgType;
+        
+        if (type == 4) {
+            // 心跳返回数据
+            WSHeartbeatRes *heaerResModel = [WSHeartbeatRes parseFromData:baseMessageModel.bytesData error:nil];
+            NSLog(@"收到心跳回复");
+        }
+        
         NSLog(@"message:%@",message);
         
         [[NSNotificationCenter defaultCenter] postNotificationName:kWebSocketdidReceiveMessageNote object:message];
